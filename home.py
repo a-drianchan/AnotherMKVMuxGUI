@@ -1,14 +1,16 @@
 import sys
 import logging
+import threading
+
 import PySide2.QtGui
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog, QListWidgetItem
+
 from ui_home import Ui_MainWindow
 from file_controller import FileController
 from pymkv_wrapper import PymkvWrapper
 from gui_helper import GuiHelper
 from output_wrapper import OutputWrapper
-
-import threading
+from filedialog_helper import FileDialogHelper
 
 logger = logging.getLogger()
 
@@ -31,14 +33,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def connect_single_buttons(self):
         self.ui.button_single_add_file.clicked.connect(self.add_track_to_single_list)
+        self.ui.button_single_clear.clicked.connect(self.clear_track)
         self.ui.button_single_browse_dir.clicked.connect(self.set_single_output_directory)
         self.ui.button_sinlge_mux.clicked.connect(self.mux_single_file)
 
     def connect_batch_buttons(self):
         self.ui.button_batch_select_input1.clicked.connect(None)
 
+    def clear_track(self):
+        self.single_file_processor.clear_track_list(self.ui.list_single_avaltrack)
+
     def add_track_to_single_list(self):
-        file_name = FileController.open_dialog_for_file()[0]
+        file_name = FileDialogHelper.open_dialog_for_file()[0]
         track_list = PymkvWrapper.process_file(file_name)
         self.single_file_processor.generate_item(track_list=track_list, list_widget=self.ui.list_single_avaltrack)
 
@@ -46,7 +52,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ui.list_single_avaltrack.currentItemChanged.connect(self.populate_track_info)
 
     def set_single_output_directory(self):
-        self.ui.lineedit_single_ouputdir.setText(FileController.open_dialog_for_directory_name())
+        self.ui.lineedit_single_ouputdir.setText(FileDialogHelper.open_dialog_for_directory_name())
 
     def populate_track_info(self):
         track = self.single_file_processor.get_track(self.ui.list_single_avaltrack.currentRow())

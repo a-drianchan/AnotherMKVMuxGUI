@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'homeYQlySN.ui'
+## Form generated from reading UI file 'homesvBqKf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.0
 ##
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(989, 835)
+        MainWindow.resize(972, 814)
         self.actionAbout = QAction(MainWindow)
         self.actionAbout.setObjectName(u"actionAbout")
         self.actionSettings = QAction(MainWindow)
@@ -39,6 +39,11 @@ class Ui_MainWindow(object):
         self.group_single_input.setObjectName(u"group_single_input")
         self.gridLayout_5 = QGridLayout(self.group_single_input)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.label_single_trackinfo = QLabel(self.group_single_input)
+        self.label_single_trackinfo.setObjectName(u"label_single_trackinfo")
+
+        self.gridLayout_5.addWidget(self.label_single_trackinfo, 2, 1, 1, 1)
+
         self.label_single_avaltrack = QLabel(self.group_single_input)
         self.label_single_avaltrack.setObjectName(u"label_single_avaltrack")
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
@@ -49,6 +54,12 @@ class Ui_MainWindow(object):
         self.label_single_avaltrack.setMinimumSize(QSize(0, 10))
 
         self.gridLayout_5.addWidget(self.label_single_avaltrack, 0, 1, 1, 1)
+
+        self.list_single_avaltrack = QListWidget(self.group_single_input)
+        self.list_single_avaltrack.setObjectName(u"list_single_avaltrack")
+        self.list_single_avaltrack.setViewMode(QListView.ListMode)
+
+        self.gridLayout_5.addWidget(self.list_single_avaltrack, 1, 1, 1, 1)
 
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -65,21 +76,18 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addLayout(self.verticalLayout_2, 1, 2, 1, 1)
 
-        self.label_single_trackinfo = QLabel(self.group_single_input)
-        self.label_single_trackinfo.setObjectName(u"label_single_trackinfo")
-
-        self.gridLayout_5.addWidget(self.label_single_trackinfo, 0, 3, 1, 1)
-
-        self.list_single_avaltrack = QListWidget(self.group_single_input)
-        self.list_single_avaltrack.setObjectName(u"list_single_avaltrack")
-        self.list_single_avaltrack.setViewMode(QListView.ListMode)
-
-        self.gridLayout_5.addWidget(self.list_single_avaltrack, 1, 1, 1, 1)
-
         self.list_single_trackinfo = QListWidget(self.group_single_input)
         self.list_single_trackinfo.setObjectName(u"list_single_trackinfo")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.list_single_trackinfo.sizePolicy().hasHeightForWidth())
+        self.list_single_trackinfo.setSizePolicy(sizePolicy1)
+        self.list_single_trackinfo.setMinimumSize(QSize(0, 0))
+        self.list_single_trackinfo.setMaximumSize(QSize(16777215, 140))
+        self.list_single_trackinfo.setBaseSize(QSize(0, 140))
 
-        self.gridLayout_5.addWidget(self.list_single_trackinfo, 1, 3, 1, 1)
+        self.gridLayout_5.addWidget(self.list_single_trackinfo, 3, 1, 1, 1)
 
 
         self.verticalLayout.addWidget(self.group_single_input)
@@ -118,11 +126,11 @@ class Ui_MainWindow(object):
 
         self.button_sinlge_mux = QPushButton(self.tab_single)
         self.button_sinlge_mux.setObjectName(u"button_sinlge_mux")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.button_sinlge_mux.sizePolicy().hasHeightForWidth())
-        self.button_sinlge_mux.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.button_sinlge_mux.sizePolicy().hasHeightForWidth())
+        self.button_sinlge_mux.setSizePolicy(sizePolicy2)
         self.button_sinlge_mux.setMinimumSize(QSize(0, 40))
 
         self.verticalLayout.addWidget(self.button_sinlge_mux)
@@ -244,7 +252,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 989, 21))
+        self.menubar.setGeometry(QRect(0, 0, 972, 21))
         self.menuSettings = QMenu(self.menubar)
         self.menuSettings.setObjectName(u"menuSettings")
         MainWindow.setMenuBar(self.menubar)
@@ -269,10 +277,10 @@ class Ui_MainWindow(object):
         self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.actionSettings.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.group_single_input.setTitle(QCoreApplication.translate("MainWindow", u"Input", None))
+        self.label_single_trackinfo.setText(QCoreApplication.translate("MainWindow", u"Track Info", None))
         self.label_single_avaltrack.setText(QCoreApplication.translate("MainWindow", u"Avaliable Track", None))
         self.button_single_add_file.setText(QCoreApplication.translate("MainWindow", u"Add File", None))
         self.button_single_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
-        self.label_single_trackinfo.setText(QCoreApplication.translate("MainWindow", u"Track Info", None))
         self.group_single_output.setTitle(QCoreApplication.translate("MainWindow", u"Output Files", None))
         self.button_single_browse_dir.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.label_single_outputname.setText(QCoreApplication.translate("MainWindow", u"Output Name:", None))
