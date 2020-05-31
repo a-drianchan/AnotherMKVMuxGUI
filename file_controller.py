@@ -1,4 +1,4 @@
-
+from events import Events
 import logging
 
 from PySide2.QtWidgets import QFileDialog, QListWidgetItem, QListWidget
@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 class FileController:
 
     def __init__(self):
-
+        self.events = Events()
         self._single_track_list = []
 
     def get_track(self, track_index: int):
@@ -19,7 +19,7 @@ class FileController:
 
     def generate_item(self, track_list, list_widget: QListWidget):
         """
-        Generate an QListWidgetItem and append it to a QListWidget
+        Generate an QListWidgetItem, enable checkboxes and append it to a QListWidget
         :param track_list:
         :param list_widget:
         :return:
@@ -41,7 +41,8 @@ class FileController:
 
             list_widget.addItem(track_item)
 
-    def clear_track_list(self, list_widget: QListWidget):
+    def clear_track_list(self):
         self._single_track_list = []
-        list_widget.clear()
+        self.events.onClear()
+
 
