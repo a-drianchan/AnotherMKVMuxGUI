@@ -65,7 +65,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Connecting non-button press signals to the correct slots
         :return:
         """
-        self.single_file_controller.events.onClear += self.callback_clear_track
+        self.single_file_controller.events.on_clear += self.callback_clear_track
         self.ui.list_single_avaltrack.currentItemChanged.connect(self.populate_track_info)
 
         self.batch_file_controller.events.on_batch_list_1_update += self.add_batch_to_file_list_1
@@ -96,7 +96,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Add the selected tracks selected from QFileDialog to the single file processor
         :return: 
         """
-        file_name = FileDialogHelper.open_dialog_for_file(mode="single")[0]
+        file_name = FileDialogHelper.open_dialog_for_file()[0]
         track_list = PymkvWrapper.process_file(file_name)
         self.single_file_controller.generate_item(track_list=track_list, list_widget=self.ui.list_single_avaltrack)
 
