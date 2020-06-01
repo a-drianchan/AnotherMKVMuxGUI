@@ -3,6 +3,7 @@ from pymkv import MKVTrack
 from file_controller import FileController
 import PySide2.QtCore
 
+
 class GuiHelper:
 
     @staticmethod

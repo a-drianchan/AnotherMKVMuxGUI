@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'homesvBqKf.ui'
+## Form generated from reading UI file 'homeYvOFzC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.0
 ##
@@ -150,20 +150,20 @@ class Ui_MainWindow(object):
         self.groupBox_4.setObjectName(u"groupBox_4")
         self.gridLayout_8 = QGridLayout(self.groupBox_4)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
-        self.listview_batch_source1 = QListView(self.groupBox_4)
-        self.listview_batch_source1.setObjectName(u"listview_batch_source1")
-
-        self.gridLayout_8.addWidget(self.listview_batch_source1, 2, 0, 1, 1)
-
-        self.listview_batch_source2 = QListView(self.groupBox_4)
-        self.listview_batch_source2.setObjectName(u"listview_batch_source2")
-
-        self.gridLayout_8.addWidget(self.listview_batch_source2, 2, 2, 1, 1)
-
         self.button_batch_clear = QPushButton(self.groupBox_4)
         self.button_batch_clear.setObjectName(u"button_batch_clear")
 
         self.gridLayout_8.addWidget(self.button_batch_clear, 2, 1, 1, 1)
+
+        self.list_batch_source1 = QListWidget(self.groupBox_4)
+        self.list_batch_source1.setObjectName(u"list_batch_source1")
+
+        self.gridLayout_8.addWidget(self.list_batch_source1, 2, 0, 1, 1)
+
+        self.list_batch_source2 = QListWidget(self.groupBox_4)
+        self.list_batch_source2.setObjectName(u"list_batch_source2")
+
+        self.gridLayout_8.addWidget(self.list_batch_source2, 2, 2, 1, 1)
 
 
         self.gridLayout_3.addWidget(self.groupBox_4, 3, 0, 1, 1)
@@ -266,7 +266,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

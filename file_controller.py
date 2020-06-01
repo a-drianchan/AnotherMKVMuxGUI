@@ -14,6 +14,10 @@ class FileController:
         self.events = Events()
         self._single_track_list = []
 
+    @property
+    def single_track_list(self):
+        return self._single_track_list
+
     def get_track(self, track_index: int):
         return self._single_track_list[track_index]
 
@@ -43,6 +47,6 @@ class FileController:
 
     def clear_track_list(self):
         self._single_track_list = []
-        self.events.onClear()
+        self.events.on_clear()
 
 

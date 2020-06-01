@@ -4,10 +4,11 @@ import PySide2.QtGui
 
 logger = logging.getLogger()
 
-"""
-Class used to direct the std output to a Qt QTestEdit object
-"""
+
 class OutputWrapper(object):
+    """
+    Class to pipe the std output to a QTExtEdit object
+    """
     def __init__(self, edit):
         self.out = sys.stdout
         self.textEdit = edit

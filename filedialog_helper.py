@@ -27,12 +27,19 @@ class FileDialogHelper:
             return file_names
 
     @staticmethod
-    def open_dialog_for_directory():
+    def open_dialog_for_directory(mode: str):
         """
             Function wrapper to open file dialogs for selecting mkv files
         :return: a list of selected files
         """
-        extensions = ["/*.mkv", "/*.ass", "/*.srt", "/*.flac", "/*.ac3"]
+        if mode == "single":
+            extensions = ["/*.mkv", "/*.ass", "/*.srt", "/*.flac", "/*.ac3"]
+        elif mode == "batch":
+            extensions = ["/*.mkv"]
+        else:
+            logger.error("Invalid mode")
+            return None
+
         file_list = []
 
         dialog = QFileDialog()
@@ -41,13 +48,16 @@ class FileDialogHelper:
             directory_name = dialog.selectedFiles()
             logger.debug(directory_name)
             for extension in extensions:
-                logger.debug("Searching for " + extension)
+                logger.debug("Searching inside " + directory_name[0] + extension)
                 file_list.extend(glob.glob(directory_name[0] + extension))
 
             for file in file_list:
-                logger.info(file + "found")
+                logger.info(file + " found")
 
             return file_list
+
+
+
 
 
     @staticmethod

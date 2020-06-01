@@ -18,7 +18,7 @@
     <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_single">
        <attribute name="title">
@@ -194,18 +194,18 @@
            <string>File Matching</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_8">
-           <item row="2" column="0">
-            <widget class="QListView" name="listview_batch_source1"/>
-           </item>
-           <item row="2" column="2">
-            <widget class="QListView" name="listview_batch_source2"/>
-           </item>
            <item row="2" column="1">
             <widget class="QPushButton" name="button_batch_clear">
              <property name="text">
               <string>Clear</string>
              </property>
             </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QListWidget" name="list_batch_source1"/>
+           </item>
+           <item row="2" column="2">
+            <widget class="QListWidget" name="list_batch_source2"/>
            </item>
           </layout>
          </widget>
