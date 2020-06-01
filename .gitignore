@@ -10,3 +10,5 @@ __pycache__/output_wrapper.cpython-36.pyc
 __pycache__/pymkv_wrapper.cpython-36.pyc
 __pycache__/ui_home.cpython-36.pyc
 .idea/vcs.xml
+*.pyc
+*.pyc
