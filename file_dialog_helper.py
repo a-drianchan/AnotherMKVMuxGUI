@@ -6,6 +6,7 @@ logger = logging.getLogger(__name__)
 
 
 class FileDialogHelper:
+
     @staticmethod
     def open_dialog_for_file():
         """
@@ -54,11 +55,8 @@ class FileDialogHelper:
             for file in file_list:
                 logger.info(file + " found")
 
+            logger.info(str(len(file_list)) + " files found.")
             return file_list
-
-
-
-
 
     @staticmethod
     def open_dialog_for_directory_name():

@@ -21,7 +21,7 @@ class FileController:
     def get_track(self, track_index: int):
         return self._single_track_list[track_index]
 
-    def generate_item(self, track_list, list_widget: QListWidget):
+    def generate_item(self, track_list):
         """
         Generate an QListWidgetItem, enable checkboxes and append it to a QListWidget
         :param track_list:
@@ -43,7 +43,7 @@ class FileController:
             track_item.setFlags(track_item.flags() | PySide2.QtCore.Qt.ItemFlag.ItemIsEnabled)
             track_item.setCheckState(PySide2.QtCore.Qt.CheckState.Unchecked)
 
-            list_widget.addItem(track_item)
+            self.events.single_track_item_generated(track_item)
 
     def clear_track_list(self):
         self._single_track_list = []

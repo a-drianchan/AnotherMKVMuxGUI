@@ -12,7 +12,7 @@ from batch_file_controller import BatchFileController
 from pymkv_wrapper import PymkvWrapper
 from gui_helper import GuiHelper
 from output_wrapper import OutputWrapper
-from filedialog_helper import FileDialogHelper
+from file_dialog_helper import FileDialogHelper
 
 
 logger = logging.getLogger()
@@ -66,10 +66,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         :return:
         """
         self.single_file_controller.events.on_clear += self.callback_clear_track
-        self.ui.list_single_avaltrack.currentItemChanged.connect(self.populate_track_info)
+        self.single_file_controller.events.single_track_item_generated += self.ui.list_single_avaltrack.addItem
 
-        self.batch_file_controller.events.on_batch_list_1_update += self.add_batch_to_file_list_1
-        self.batch_file_controller.events.on_batch_list_2_update += self.add_batch_to_file_list_2
+        self.ui.list_single_avaltrack.currentItemChanged.connect(self.populate_track_info)
+        self.batch_file_controller.events.batch_file_item_generated += self.update_batch_list
+        self.batch_file_controller.events.batch_item_generated += self.update_batch_list
+
+        self.batch_file_controller.events.ref_tracks_generated += self.update_reference_list
+
 
 
     """
@@ -94,11 +98,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def add_track_to_single_list(self):
         """
         Add the selected tracks selected from QFileDialog to the single file processor
-        :return: 
+        :return:
         """
         file_name = FileDialogHelper.open_dialog_for_file()[0]
         track_list = PymkvWrapper.process_file(file_name)
-        self.single_file_controller.generate_item(track_list=track_list, list_widget=self.ui.list_single_avaltrack)
+        self.single_file_controller.generate_item(track_list=track_list)
 
     def set_single_output_directory(self):
         """
@@ -139,16 +143,41 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def get_file_from_directory(self, source: int):
         if source == 1:
             self.batch_file_controller.source_1_list = FileDialogHelper.open_dialog_for_directory(mode="batch")
+
         elif source == 2:
             self.batch_file_controller.source_2_list = FileDialogHelper.open_dialog_for_directory(mode="batch")
 
-    def add_batch_to_file_list_1(self):
-        self.batch_file_controller.generate_item(self.batch_file_controller.source_1_list,
-                                                 self.ui.list_batch_source1, 1)
+    def update_batch_list(self, list_item: QListWidgetItem, list_num: str):
+        """
+        Add item to the file list
+        :param list_item:
+        :param list_num:
+        :return:
+        """
+        if list_num == 1:
+            self.ui.list_batch_source1.addItem(list_item)
+            self.ui.lable_batch_file_count_1.setText("File Count: " + str(len(self.batch_file_controller.source_1_list)))
+            if self.ui.list_batch_source1.count() == 1:
+                self.batch_file_controller.generate_track_item(1)
+        elif list_num == 2:
+            self.ui.list_batch_source2.addItem(list_item)
+            self.ui.lable_batch_file_count_2.setText("File Count: " + str(len(self.batch_file_controller.source_2_list)))
+            if self.ui.list_batch_source2.count() == 1:
+                self.batch_file_controller.generate_track_item(2)
 
-    def add_batch_to_file_list_2(self):
-        self.batch_file_controller.generate_item(self.batch_file_controller.source_2_list,
-                                                 self.ui.list_batch_source2, 2)
+    def update_reference_list(self, file_name, track_item, list_num: int):
+        """
+        Add in track information using the first item in the source list
+        :param track_item:
+        :param list_num:
+        :return:
+        """
+        if list_num == 1:
+            self.ui.label_batch_ref_1.setText(file_name)
+            self.ui.list_batch_reference_1.addItem(track_item)
+        elif list_num == 2:
+            self.ui.label_batch_ref_2.setText(file_name)
+            self.ui.list_batch_reference_2.addItem(track_item)
 
 
 if __name__ == "__main__":

@@ -11,11 +11,18 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>A(nother)MKVMuxGUI</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_4">
     <item row="1" column="0">
+     <widget class="QTextEdit" name="log">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>1</number>
@@ -175,20 +182,7 @@
         <string>Directory Mux</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="6" column="0" colspan="2">
-         <widget class="QPushButton" name="button_batch_mux">
-          <property name="baseSize">
-           <size>
-            <width>0</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Mux</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
+        <item row="2" column="0">
          <widget class="QGroupBox" name="groupBox_4">
           <property name="title">
            <string>File Matching</string>
@@ -207,43 +201,19 @@
            <item row="2" column="2">
             <widget class="QListWidget" name="list_batch_source2"/>
            </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="1" column="0" colspan="2">
-         <widget class="QGroupBox" name="groupBox">
-          <property name="title">
-           <string>Output Settings</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_batch_outputdir">
+           <item row="3" column="0">
+            <widget class="QLabel" name="lable_batch_file_count_1">
              <property name="text">
-              <string>Output Directory</string>
+              <string>File Count:</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QLineEdit" name="lineedit_batch_outputdir"/>
-           </item>
-           <item row="0" column="2">
-            <widget class="QPushButton" name="button_batch_select_output">
+           <item row="3" column="2">
+            <widget class="QLabel" name="lable_batch_file_count_2">
              <property name="text">
-              <string>Select</string>
+              <string>File Count:</string>
              </property>
             </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="2" column="0" colspan="2">
-         <widget class="QGroupBox" name="groupBox_3">
-          <property name="title">
-           <string>Reference Settings</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_7">
-           <item row="0" column="0">
-            <widget class="QListView" name="listview_batch_reference"/>
            </item>
           </layout>
          </widget>
@@ -253,11 +223,24 @@
           <property name="title">
            <string>Input Settings</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_2">
+          <layout class="QGridLayout" name="gridLayout">
            <item row="0" column="0">
             <widget class="QLabel" name="label_batch_source1dir">
              <property name="text">
               <string>Source 1 Directory</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="button_batch_select_input1">
+             <property name="baseSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Select</string>
              </property>
             </widget>
            </item>
@@ -268,21 +251,35 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="3">
-            <widget class="QPushButton" name="button_batch_select_input1">
+           <item row="1" column="1">
+            <widget class="QPushButton" name="button_batch_select_input2">
              <property name="text">
               <string>Select</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="2">
-            <widget class="QLineEdit" name="lineedit_batch_source1dir"/>
-           </item>
            <item row="1" column="2">
-            <widget class="QLineEdit" name="lineedit_batch_source2dir"/>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>731</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
            </item>
-           <item row="1" column="3">
-            <widget class="QPushButton" name="button_batch_select_input2">
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_batch_outputdir">
+             <property name="text">
+              <string>Output Directory</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="button_batch_select_output">
              <property name="text">
               <string>Select</string>
              </property>
@@ -291,15 +288,56 @@
           </layout>
          </widget>
         </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QPushButton" name="button_batch_mux">
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Mux</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Reference Settings</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="1" column="0">
+            <widget class="QListWidget" name="list_batch_reference_1"/>
+           </item>
+           <item row="1" column="1">
+            <widget class="QListWidget" name="list_batch_reference_2"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_batch_ref_1">
+             <property name="text">
+              <string>No file loaded</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_batch_ref_2">
+             <property name="text">
+              <string>No file loaded</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QTextEdit" name="log">
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
      </widget>
     </item>
    </layout>
