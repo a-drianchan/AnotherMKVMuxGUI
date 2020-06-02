@@ -23,15 +23,15 @@ Requirments.txt will be uploaded once the GUI is completely functional.
 ## **Current Status**
 
 **Working**
- - Single File Mux Working
+ - Single File Mux Mode:
 	 - Load in tracks by selecting individual .mkv files
 	 - Read track info inside the .mkv file
 
 **WIP /Planned**
-
- - Batch Mux
+ - User defined settings / preferences
+ - Batch Mux Mode:
 	 - Load in all mkv files using directory
 	 - Mux all files in directory based on one reference file
 	 - Match .mkv files between two source directories for batch muxing
 - Proper  display of mkvmerge progress into the GUI itself
-
+- Muxing of Attachments
