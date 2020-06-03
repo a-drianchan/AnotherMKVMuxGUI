@@ -202,14 +202,14 @@
             <widget class="QListWidget" name="list_batch_source2"/>
            </item>
            <item row="3" column="0">
-            <widget class="QLabel" name="lable_batch_file_count_1">
+            <widget class="QLabel" name="label_batch_file_count_1">
              <property name="text">
               <string>File Count:</string>
              </property>
             </widget>
            </item>
            <item row="3" column="2">
-            <widget class="QLabel" name="lable_batch_file_count_2">
+            <widget class="QLabel" name="label_batch_file_count_2">
              <property name="text">
               <string>File Count:</string>
              </property>

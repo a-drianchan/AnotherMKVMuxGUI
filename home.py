@@ -24,6 +24,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.events = Events()
 
         sys.stdout = OutputWrapper(self.ui.log)
         sys.stderr = OutputWrapper(self.ui.log)
@@ -36,6 +37,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect_batch_buttons()
         self.connect_callback_functions()
 
+        self.connect_auto_update()
 
     """
     Functions to connect GUI to the proper functions
@@ -59,6 +61,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         self.ui.button_batch_select_input1.clicked.connect(lambda: self.get_file_from_directory(1))
         self.ui.button_batch_select_input2.clicked.connect(lambda: self.get_file_from_directory(2))
+        self.ui.button_batch_mux.clicked.connect(self.batch_mux)
+        self.ui.button_batch_clear.clicked.connect(self.batch_file_controller.clear_all)
+        self.ui.button_batch_select_output.clicked.connect(self.get_output_directory_name)
+
+    def connect_auto_update(self):
+        self.ui.list_batch_reference_1.itemChanged.connect(
+            lambda: self.batch_file_controller.gather_all_selected_track(self.ui.list_batch_reference_1, self.ui.list_batch_reference_2))
+        self.ui.list_batch_reference_2.itemChanged.connect(
+            lambda: self.batch_file_controller.gather_all_selected_track(self.ui.list_batch_reference_1, self.ui.list_batch_reference_2))
 
     def connect_callback_functions(self):
         """
@@ -73,6 +84,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.batch_file_controller.events.batch_item_generated += self.update_batch_list
 
         self.batch_file_controller.events.ref_tracks_generated += self.update_reference_list
+        self.batch_file_controller.events.clear_all += self.clear_batch_mode
+
 
 
 
@@ -147,6 +160,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         elif source == 2:
             self.batch_file_controller.source_2_list = FileDialogHelper.open_dialog_for_directory(mode="batch")
 
+    def get_output_directory_name(self):
+            self.batch_file_controller.output_directory = FileDialogHelper.open_dialog_for_directory_name()
+
     def update_batch_list(self, list_item: QListWidgetItem, list_num: str):
         """
         Add item to the file list
@@ -156,12 +172,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         if list_num == 1:
             self.ui.list_batch_source1.addItem(list_item)
-            self.ui.lable_batch_file_count_1.setText("File Count: " + str(len(self.batch_file_controller.source_1_list)))
+            self.ui.label_batch_file_count_1.setText("File Count: " + str(len(self.batch_file_controller.source_1_list)))
             if self.ui.list_batch_source1.count() == 1:
                 self.batch_file_controller.generate_track_item(1)
         elif list_num == 2:
             self.ui.list_batch_source2.addItem(list_item)
-            self.ui.lable_batch_file_count_2.setText("File Count: " + str(len(self.batch_file_controller.source_2_list)))
+            self.ui.label_batch_file_count_2.setText("File Count: " + str(len(self.batch_file_controller.source_2_list)))
             if self.ui.list_batch_source2.count() == 1:
                 self.batch_file_controller.generate_track_item(2)
 
@@ -179,6 +195,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.ui.label_batch_ref_2.setText(file_name)
             self.ui.list_batch_reference_2.addItem(track_item)
 
+    def batch_mux(self):
+        batch_mux = threading.Thread(target=self.batch_file_controller.batch_mux_files)
+        batch_mux.start()
+
+
+    def clear_batch_mode(self):
+        self.ui.list_batch_reference_1.clear()
+        self.ui.list_batch_reference_2.clear()
+
+        self.ui.list_batch_source1.clear()
+        self.ui.list_batch_source2.clear()
+
+        self.ui.label_batch_ref_1.setText("No file loaded")
+        self.ui.label_batch_ref_1.setText("No file loaded"
+                                          "")
+        self.ui.label_batch_file_count_1.setText("File Count: 0")
+        self.ui.label_batch_file_count_2.setText("File Count: 0")
 
 if __name__ == "__main__":
 

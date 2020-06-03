@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'homeILqRUk.ui'
+## Form generated from reading UI file 'homeYhBmUd.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.0
 ##
@@ -165,15 +165,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout_8.addWidget(self.list_batch_source2, 2, 2, 1, 1)
 
-        self.lable_batch_file_count_1 = QLabel(self.groupBox_4)
-        self.lable_batch_file_count_1.setObjectName(u"lable_batch_file_count_1")
+        self.label_batch_file_count_1 = QLabel(self.groupBox_4)
+        self.label_batch_file_count_1.setObjectName(u"label_batch_file_count_1")
 
-        self.gridLayout_8.addWidget(self.lable_batch_file_count_1, 3, 0, 1, 1)
+        self.gridLayout_8.addWidget(self.label_batch_file_count_1, 3, 0, 1, 1)
 
-        self.lable_batch_file_count_2 = QLabel(self.groupBox_4)
-        self.lable_batch_file_count_2.setObjectName(u"lable_batch_file_count_2")
+        self.label_batch_file_count_2 = QLabel(self.groupBox_4)
+        self.label_batch_file_count_2.setObjectName(u"label_batch_file_count_2")
 
-        self.gridLayout_8.addWidget(self.lable_batch_file_count_2, 3, 2, 1, 1)
+        self.gridLayout_8.addWidget(self.label_batch_file_count_2, 3, 2, 1, 1)
 
 
         self.gridLayout_3.addWidget(self.groupBox_4, 2, 0, 1, 1)
@@ -299,8 +299,8 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_single), QCoreApplication.translate("MainWindow", u"MKV Mux", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"File Matching", None))
         self.button_batch_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
-        self.lable_batch_file_count_1.setText(QCoreApplication.translate("MainWindow", u"File Count:", None))
-        self.lable_batch_file_count_2.setText(QCoreApplication.translate("MainWindow", u"File Count:", None))
+        self.label_batch_file_count_1.setText(QCoreApplication.translate("MainWindow", u"File Count:", None))
+        self.label_batch_file_count_2.setText(QCoreApplication.translate("MainWindow", u"File Count:", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Input Settings", None))
         self.label_batch_source1dir.setText(QCoreApplication.translate("MainWindow", u"Source 1 Directory", None))
         self.button_batch_select_input1.setText(QCoreApplication.translate("MainWindow", u"Select", None))
