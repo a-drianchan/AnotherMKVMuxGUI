@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'homeYhBmUd.ui'
+## Form generated from reading UI file 'homeNKWgRq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.0
 ##
@@ -178,48 +178,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.groupBox_4, 2, 0, 1, 1)
 
-        self.groupBox_2 = QGroupBox(self.tab_batch)
-        self.groupBox_2.setObjectName(u"groupBox_2")
-        self.gridLayout = QGridLayout(self.groupBox_2)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.label_batch_source1dir = QLabel(self.groupBox_2)
-        self.label_batch_source1dir.setObjectName(u"label_batch_source1dir")
-
-        self.gridLayout.addWidget(self.label_batch_source1dir, 0, 0, 1, 1)
-
-        self.button_batch_select_input1 = QPushButton(self.groupBox_2)
-        self.button_batch_select_input1.setObjectName(u"button_batch_select_input1")
-        self.button_batch_select_input1.setBaseSize(QSize(0, 0))
-
-        self.gridLayout.addWidget(self.button_batch_select_input1, 0, 1, 1, 1)
-
-        self.label_batch_source2dir = QLabel(self.groupBox_2)
-        self.label_batch_source2dir.setObjectName(u"label_batch_source2dir")
-
-        self.gridLayout.addWidget(self.label_batch_source2dir, 1, 0, 1, 1)
-
-        self.button_batch_select_input2 = QPushButton(self.groupBox_2)
-        self.button_batch_select_input2.setObjectName(u"button_batch_select_input2")
-
-        self.gridLayout.addWidget(self.button_batch_select_input2, 1, 1, 1, 1)
-
-        self.horizontalSpacer = QSpacerItem(731, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer, 1, 2, 1, 1)
-
-        self.label_batch_outputdir = QLabel(self.groupBox_2)
-        self.label_batch_outputdir.setObjectName(u"label_batch_outputdir")
-
-        self.gridLayout.addWidget(self.label_batch_outputdir, 2, 0, 1, 1)
-
-        self.button_batch_select_output = QPushButton(self.groupBox_2)
-        self.button_batch_select_output.setObjectName(u"button_batch_select_output")
-
-        self.gridLayout.addWidget(self.button_batch_select_output, 2, 1, 1, 1)
-
-
-        self.gridLayout_3.addWidget(self.groupBox_2, 0, 0, 1, 2)
-
         self.button_batch_mux = QPushButton(self.tab_batch)
         self.button_batch_mux.setObjectName(u"button_batch_mux")
         self.button_batch_mux.setBaseSize(QSize(0, 40))
@@ -230,10 +188,11 @@ class Ui_MainWindow(object):
         self.groupBox_3.setObjectName(u"groupBox_3")
         self.gridLayout_7 = QGridLayout(self.groupBox_3)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.list_batch_reference_1 = QListWidget(self.groupBox_3)
-        self.list_batch_reference_1.setObjectName(u"list_batch_reference_1")
+        self.label_batch_ref_2 = QLabel(self.groupBox_3)
+        self.label_batch_ref_2.setObjectName(u"label_batch_ref_2")
+        self.label_batch_ref_2.setWordWrap(True)
 
-        self.gridLayout_7.addWidget(self.list_batch_reference_1, 1, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.label_batch_ref_2, 0, 1, 1, 1)
 
         self.list_batch_reference_2 = QListWidget(self.groupBox_3)
         self.list_batch_reference_2.setObjectName(u"list_batch_reference_2")
@@ -246,14 +205,60 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.label_batch_ref_1, 0, 0, 1, 1)
 
-        self.label_batch_ref_2 = QLabel(self.groupBox_3)
-        self.label_batch_ref_2.setObjectName(u"label_batch_ref_2")
-        self.label_batch_ref_2.setWordWrap(True)
+        self.list_batch_reference_1 = QListWidget(self.groupBox_3)
+        self.list_batch_reference_1.setObjectName(u"list_batch_reference_1")
 
-        self.gridLayout_7.addWidget(self.label_batch_ref_2, 0, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.list_batch_reference_1, 1, 0, 1, 1)
 
 
         self.gridLayout_3.addWidget(self.groupBox_3, 1, 0, 1, 2)
+
+        self.groupBox_2 = QGroupBox(self.tab_batch)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.gridLayout = QGridLayout(self.groupBox_2)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.button_batch_select_input2 = QPushButton(self.groupBox_2)
+        self.button_batch_select_input2.setObjectName(u"button_batch_select_input2")
+
+        self.gridLayout.addWidget(self.button_batch_select_input2, 1, 1, 1, 1)
+
+        self.label_batch_outputdir = QLabel(self.groupBox_2)
+        self.label_batch_outputdir.setObjectName(u"label_batch_outputdir")
+
+        self.gridLayout.addWidget(self.label_batch_outputdir, 2, 0, 1, 1)
+
+        self.button_batch_select_input1 = QPushButton(self.groupBox_2)
+        self.button_batch_select_input1.setObjectName(u"button_batch_select_input1")
+        self.button_batch_select_input1.setBaseSize(QSize(0, 0))
+
+        self.gridLayout.addWidget(self.button_batch_select_input1, 0, 1, 1, 1)
+
+        self.button_batch_select_output = QPushButton(self.groupBox_2)
+        self.button_batch_select_output.setObjectName(u"button_batch_select_output")
+
+        self.gridLayout.addWidget(self.button_batch_select_output, 2, 1, 1, 1)
+
+        self.label_batch_source2dir = QLabel(self.groupBox_2)
+        self.label_batch_source2dir.setObjectName(u"label_batch_source2dir")
+
+        self.gridLayout.addWidget(self.label_batch_source2dir, 1, 0, 1, 1)
+
+        self.label_batch_source1dir = QLabel(self.groupBox_2)
+        self.label_batch_source1dir.setObjectName(u"label_batch_source1dir")
+
+        self.gridLayout.addWidget(self.label_batch_source1dir, 0, 0, 1, 1)
+
+        self.horizontalSpacer = QSpacerItem(731, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer, 0, 2, 1, 1)
+
+        self.label_batch_output_dir_name = QLabel(self.groupBox_2)
+        self.label_batch_output_dir_name.setObjectName(u"label_batch_output_dir_name")
+
+        self.gridLayout.addWidget(self.label_batch_output_dir_name, 2, 2, 1, 1)
+
+
+        self.gridLayout_3.addWidget(self.groupBox_2, 0, 0, 1, 2)
 
         self.tabWidget.addTab(self.tab_batch, "")
 
@@ -301,17 +306,18 @@ class Ui_MainWindow(object):
         self.button_batch_clear.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
         self.label_batch_file_count_1.setText(QCoreApplication.translate("MainWindow", u"File Count:", None))
         self.label_batch_file_count_2.setText(QCoreApplication.translate("MainWindow", u"File Count:", None))
-        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Input Settings", None))
-        self.label_batch_source1dir.setText(QCoreApplication.translate("MainWindow", u"Source 1 Directory", None))
-        self.button_batch_select_input1.setText(QCoreApplication.translate("MainWindow", u"Select", None))
-        self.label_batch_source2dir.setText(QCoreApplication.translate("MainWindow", u"Source 2 Directory", None))
-        self.button_batch_select_input2.setText(QCoreApplication.translate("MainWindow", u"Select", None))
-        self.label_batch_outputdir.setText(QCoreApplication.translate("MainWindow", u"Output Directory", None))
-        self.button_batch_select_output.setText(QCoreApplication.translate("MainWindow", u"Select", None))
         self.button_batch_mux.setText(QCoreApplication.translate("MainWindow", u"Mux", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"Reference Settings", None))
-        self.label_batch_ref_1.setText(QCoreApplication.translate("MainWindow", u"No file loaded", None))
         self.label_batch_ref_2.setText(QCoreApplication.translate("MainWindow", u"No file loaded", None))
+        self.label_batch_ref_1.setText(QCoreApplication.translate("MainWindow", u"No file loaded", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Input Settings", None))
+        self.button_batch_select_input2.setText(QCoreApplication.translate("MainWindow", u"Select", None))
+        self.label_batch_outputdir.setText(QCoreApplication.translate("MainWindow", u"Output Directory", None))
+        self.button_batch_select_input1.setText(QCoreApplication.translate("MainWindow", u"Select", None))
+        self.button_batch_select_output.setText(QCoreApplication.translate("MainWindow", u"Select", None))
+        self.label_batch_source2dir.setText(QCoreApplication.translate("MainWindow", u"Source 2 Directory", None))
+        self.label_batch_source1dir.setText(QCoreApplication.translate("MainWindow", u"Source 1 Directory", None))
+        self.label_batch_output_dir_name.setText(QCoreApplication.translate("MainWindow", u"No Output Directory Selected", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_batch), QCoreApplication.translate("MainWindow", u"Directory Mux", None))
         self.menuSettings.setTitle(QCoreApplication.translate("MainWindow", u"Help", None))
     # retranslateUi

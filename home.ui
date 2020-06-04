@@ -218,76 +218,6 @@
           </layout>
          </widget>
         </item>
-        <item row="0" column="0" colspan="2">
-         <widget class="QGroupBox" name="groupBox_2">
-          <property name="title">
-           <string>Input Settings</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_batch_source1dir">
-             <property name="text">
-              <string>Source 1 Directory</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QPushButton" name="button_batch_select_input1">
-             <property name="baseSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Select</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_batch_source2dir">
-             <property name="text">
-              <string>Source 2 Directory</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QPushButton" name="button_batch_select_input2">
-             <property name="text">
-              <string>Select</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>731</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_batch_outputdir">
-             <property name="text">
-              <string>Output Directory</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
-            <widget class="QPushButton" name="button_batch_select_output">
-             <property name="text">
-              <string>Select</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
         <item row="5" column="0" colspan="2">
          <widget class="QPushButton" name="button_batch_mux">
           <property name="baseSize">
@@ -307,8 +237,15 @@
            <string>Reference Settings</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_7">
-           <item row="1" column="0">
-            <widget class="QListWidget" name="list_batch_reference_1"/>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_batch_ref_2">
+             <property name="text">
+              <string>No file loaded</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+            </widget>
            </item>
            <item row="1" column="1">
             <widget class="QListWidget" name="list_batch_reference_2"/>
@@ -323,13 +260,83 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="label_batch_ref_2">
+           <item row="1" column="0">
+            <widget class="QListWidget" name="list_batch_reference_1"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Input Settings</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="1" column="1">
+            <widget class="QPushButton" name="button_batch_select_input2">
              <property name="text">
-              <string>No file loaded</string>
+              <string>Select</string>
              </property>
-             <property name="wordWrap">
-              <bool>true</bool>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_batch_outputdir">
+             <property name="text">
+              <string>Output Directory</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="button_batch_select_input1">
+             <property name="baseSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Select</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="button_batch_select_output">
+             <property name="text">
+              <string>Select</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_batch_source2dir">
+             <property name="text">
+              <string>Source 2 Directory</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_batch_source1dir">
+             <property name="text">
+              <string>Source 1 Directory</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>731</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="label_batch_output_dir_name">
+             <property name="text">
+              <string>No Output Directory Selected</string>
              </property>
             </widget>
            </item>

@@ -124,6 +124,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         self.ui.lineedit_single_ouputdir.setText(FileDialogHelper.open_dialog_for_directory_name())
 
+
     def populate_track_info(self):
         """
         Populate the track information in the single file mux with the selected track
@@ -162,6 +163,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def get_output_directory_name(self):
             self.batch_file_controller.output_directory = FileDialogHelper.open_dialog_for_directory_name()
+            self.ui.label_batch_output_dir_name.setText(self.batch_file_controller.output_directory)
 
     def update_batch_list(self, list_item: QListWidgetItem, list_num: str):
         """
@@ -199,7 +201,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         batch_mux = threading.Thread(target=self.batch_file_controller.batch_mux_files)
         batch_mux.start()
 
-
     def clear_batch_mode(self):
         self.ui.list_batch_reference_1.clear()
         self.ui.list_batch_reference_2.clear()
@@ -212,6 +213,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                           "")
         self.ui.label_batch_file_count_1.setText("File Count: 0")
         self.ui.label_batch_file_count_2.setText("File Count: 0")
+
 
 if __name__ == "__main__":
 

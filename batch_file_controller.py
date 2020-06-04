@@ -141,9 +141,8 @@ class BatchFileController:
         batch_mux_thread = threading.Thread(
             PymkvWrapper.batch_mux_files(self.source_1_list, self.source_1_list,
                                          self.user_setting_1, self.user_setting_2,
-                                         self.output_directory, ""))
+                                         self.output_directory))
         batch_mux_thread.start()
-
 
     def clear_all(self):
         self._source_1_list = []

@@ -37,7 +37,7 @@ class PymkvWrapper(object):
         mkv.mux(output_dir + output_name)
 
     @staticmethod
-    def batch_mux_files(mkv_list_1, mkv_list_2, settings_1, settings_2, output_directory, output_name):
+    def batch_mux_files(mkv_list_1, mkv_list_2, settings_1, settings_2, output_directory):
 
         if len(mkv_list_1) == len(mkv_list_2):
 
@@ -55,13 +55,9 @@ class PymkvWrapper(object):
                 for track_number in settings_2:
                     mkv.add_track(track_list_2[track_number])
 
-                # Add tracks from source 2
-                if output_name[-4:] != ".mkv":
-                    output_name = output_name + ".mkv"
-
-                output_name = str(item_num) + ".mkv"
-                logger.debug("Output directory is: " + output_directory + "/" +  output_name)
-                mkv.mux(output_directory + "/" +  output_name)
+                output_name = mkv_list_1[item_num].split("/")[-1]
+                logger.debug("Output directory is: " + output_directory + "/" + output_name)
+                mkv.mux(output_directory + "/" + output_name)
 
         else:
             logger.error("Source 1 and Source 2 directory have different numbers of files. Unable to batch mux.")
