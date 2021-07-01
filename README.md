@@ -3,8 +3,6 @@
 # AnotherMKVMuxGUI
 A(nother) GUI wrapper allowing user to utilize pymkv to batch mux .mkv files, and batch mux tracks between two mkv folders together. 
 
-Requirments.txt will be uploaded once the GUI is completely functional.
-
 ![Single Mux Mode](https://i.ibb.co/ngzpBWT/Single-Mux-Screenshot.png)
 
 ## **Required Packages (WIP)**
